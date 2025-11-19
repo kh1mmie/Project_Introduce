@@ -50,6 +50,7 @@
     text-stroke-color: var(--color-Magenta);
   }
 
+  /* Rainbow */
   .animated-rainbow-border {
     background: linear-gradient(
       90deg,
@@ -83,6 +84,23 @@
       var(--color-Lavender) 
     );
     background-size: 200% 100%;
+    animation: rainbow-border 8s linear infinite;
+  }
+
+  /* Text Run */
+  .animated-gradient-text {
+    background: linear-gradient(
+      90deg,
+      var(--color-Magenta),
+      var(--color-bbMilk),
+      var(--color-Green4),
+      var(--color-Teal),
+      var(--color-BlueText),
+      var(--color-Lavender)
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: rainbow-border 8s linear infinite;
   }
 }

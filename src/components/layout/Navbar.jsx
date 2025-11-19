@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-library.add(faAngleDown);
+// library.add(faAngleDown);
 
 export default function Navbar() {
   const aboutRef = useRef(null);
@@ -44,10 +44,10 @@ export default function Navbar() {
       px-10 py-3 flex md:flex-row gap-8 items-center justify-between transition-all duration-300 w-full h-[50px]"
       >
         {/* Logo Web */}
-        <img className="w-[50px] h-[50px]" src="/public/img/hmmm.ico" alt=" " />
+        <img className="w-[50px] h-[50px]" src="/public/img/chihuahua.png" alt=" " />
 
         {/* Main Menu */}
-        <ul className="hidden md:flex gap-6 ">
+        <ul className="hidden md:flex gap-8">
           {/* 1-Home */}
           <li>
             <a
@@ -55,8 +55,8 @@ export default function Navbar() {
               onClick={() => handleMenuClick("home")}
               className={`${
                 selectedMenu === "home"
-                  ? "text-Green4 border-b-2 border-Green4"
-                  : "hover:text-white "
+                  ? "text-Green4 border-b-2 border-Green4 transition-discrete duration-200 scale-110 inline-block "
+                  : "hover:text-white hover:scale-110 inline-block transition-transform duration-200"
               }`}
             >
               Home
@@ -64,8 +64,21 @@ export default function Navbar() {
           </li>
 
           {/* 2-About */}
-          <li ref={aboutRef} className="relative justify-items-end">
-            <button
+          <li>
+            <a
+              href="#"
+              onClick={() => handleMenuClick("What I do")}
+              className={`${
+                selectedMenu === "What I do"
+                  ? "text-Green4 border-b-2 border-Green4 scale-110 inline-block "
+                  : "hover:text-white hover:scale-110 inline-block transition-transform duration-200"
+              }`}
+            >
+              What I do
+            </a>
+          </li>
+          {/* <li ref={aboutRef} className="relative justify-items-end">
+            <a href="#"
               type="button"
               id="about-button"
               onClick={() => handleMenuClick("about")}
@@ -79,14 +92,15 @@ export default function Navbar() {
               }`}
             >
               <span className="mr-1.5"> About me </span>
+
               {/* DropDown about */}
-              <FontAwesomeIcon
+          {/* <FontAwesomeIcon
                 icon={faAngleDown}
                 className={`${
                   selectedMenu === "about" ? "rotate-180" : "rotate-0"
                 } transition-transform duration-200`}
               />
-            </button>
+            </a>
 
             {selectedMenu === "about" && (
               <div
@@ -103,7 +117,7 @@ export default function Navbar() {
                 </a>
               </div>
             )}
-          </li>
+          </li> */}
 
           {/* 3-Work */}
           <li>
@@ -112,8 +126,8 @@ export default function Navbar() {
               onClick={() => handleMenuClick("work")}
               className={`${
                 selectedMenu === "work"
-                  ? "text-[#A3FE01] border-b-2 border-[#A3FE01]"
-                  : "hover:text-white"
+                  ? "text-[#A3FE01] border-b-2 border-[#A3FE01] scale-110 inline-block "
+                  : "hover:text-white hover:scale-110 inline-block transition-transform duration-200"
               }`}
             >
               Work
@@ -124,7 +138,8 @@ export default function Navbar() {
 
       {/* 4-BTN-Contact */}
       <button
-        className="bg-white/17 hover:bg-Green4/57 backdrop-blur-md text-white/40 hover:text-white rounded-full shadow-lg border border-white/20 hover:border-Green4/80
+        className="bg-white/17 hover:bg-Green4/57 bg-conic-<angle> from-Lavender via- 
+        backdrop-blur-md text-white/40 hover:text-white rounded-full shadow-lg border border-white/20 hover:border-Green4/80
         px-10 py-3 flex md:flex-row gap-8 items-center justify-between transition-all duration-300 h-[50px] "
       >
         Contact
