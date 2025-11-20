@@ -1,31 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-Noir: #1a1a1a; /* used */
-  --color-Dark: #2C2C2C;
-  --color-Eclipse: #2c2c54;
-  --color-MidnigthBule: #191970; /* used */
-  --color-BlackBurry: #12283f;
-  --color-blackHole: #201e4b;
-  --color-DeepNavyblue: #191970;
+  --color-Noir: #1a1a1a; 
+  --color-Dark: #2c2c2c;
+  --color-MidnigthBule: #191970; 
   --color-BlueText: #367cff;
-  --color-DeepPlum: #37012b;
   --color-MidnightPurple1: #280137;
   --color-MidnightPurple2: #2e1a47;
-  --color-MidnightPurple3: #1e0939; /* used */
+  --color-MidnightPurple3: #1e0939; 
   --color-bbMilk: #9f5fb8;
   --color-Lavender: #8b53fe;
-  --color-LightGray: #e5e5e5;
-  --color-Ivory: #fffdd0; /* used */
+  --color-Ivory: #fffdd0; 
   --color-Teal: #00f5d4;
   --color-Magenta: #ff00ff;
-  --color-Green1: #79b85f;
-  --color-Green2: #8eff01;
-  --color-Green3: #00ff00;
-  --color-Green4: #a3fe01; /* used */
+  --color-Green4: #a3fe01; 
 }
 
 @layer utilities {
+  /* ##### Stroke ##### */
   /* stroke width */
   .text-stroke-1 {
     -webkit-text-stroke-width: 1px;
@@ -35,7 +27,6 @@
     -webkit-text-stroke-width: 2px;
     text-stroke-width: 2px;
   }
-
   /* color stoke */
   .text-stroke-Green4 {
     -webkit-text-stroke-color: var(--color-Green4);
@@ -49,8 +40,10 @@
     -webkit-text-stroke-color: var(--color-Magenta);
     text-stroke-color: var(--color-Magenta);
   }
+  /* ##### Stroke ##### */
 
-  /* Rainbow */
+  /* ##### Rainbow RGB Run ##### */
+  /* Rainbow border*/
   .animated-rainbow-border {
     background: linear-gradient(
       90deg,
@@ -63,16 +56,15 @@
       var(--color-Lavender)
     );
     background-size: 200% 100%;
-
     -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                  linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-
     animation: rainbow-border 8s linear infinite;
   }
-
+  /* Rainbow glow*/
   .animated-rainbow-glow {
     background: linear-gradient(
       90deg,
@@ -81,12 +73,11 @@
       var(--color-Green4),
       var(--color-Teal),
       var(--color-BlueText),
-      var(--color-Lavender) 
+      var(--color-Lavender)
     );
     background-size: 200% 100%;
     animation: rainbow-border 8s linear infinite;
   }
-
   /* Text Run */
   .animated-gradient-text {
     background: linear-gradient(
@@ -103,6 +94,7 @@
     -webkit-text-fill-color: transparent;
     animation: rainbow-border 8s linear infinite;
   }
+  /* ##### Rainbow RGB Run ##### */
 }
 
 @keyframes rainbow-border {
@@ -114,5 +106,28 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative inline-block transition-transform duration-300;
+  }
+
+  .nav-link::after {
+    content: ""; 
+    @apply absolute left-0 bottom-0 h-[2px] bg-Green4 transition-all duration-300 w-0;
+  }
+
+  /* .nav-link:hover::after {
+    @apply w-full;
+  } */
+
+  .nav-active {
+    @apply text-Green4 scale-110;
+  }
+
+  .nav-active::after {
+    @apply w-full;
   }
 }

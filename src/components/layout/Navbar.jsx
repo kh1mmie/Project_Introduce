@@ -92,9 +92,10 @@ export default function Navbar() {
 
       {/* 4-BTN-Contact */}
       <button
-        className="bg-white/17 hover:bg-Green4/57 bg-conic-<angle> from-Lavender via- 
-        backdrop-blur-md text-white/40 hover:text-white rounded-full shadow-lg border border-white/20 hover:border-Green4/80
-        px-10 py-3 flex md:flex-row gap-8 items-center justify-between transition-all duration-300 h-[50px] "
+        className="bg-white/17 hover:bg-Green4/57  text-white/40 hover:text-white 
+        rounded-full shadow-lg border border-white/20 hover:border-Green4/80
+        px-8 py-2.5 flex items-center justify-between transition-all duration-300  
+        cursor-pointer "
       >
         Contact
       </button>

@@ -15,27 +15,38 @@ export default function Home() {
   };
 
   return (
-    <div className="justify-center items-center flex h-screen text-white mt-4">
-
-      {/* Container */}
-      <div className="relative w-full h-[67%] ">
+    <div className="justify-center items-center flex h-screen text-white cursor-default ">
 
         {/* Content */}
-        <div className="w-full h-full flex flex-col gap-1 justify-center" >
+        <div className="w-[90%] h-full flex flex-col gap-1 justify-center">
 
-          {/* Text */}
-          <div className="ring rounded-full w-[150px] p-1 text-center mb-7"> INTRODUCING </div>
+          <div className="relative w-[150px] mb-7 text-center">
+            <div
+              className="animated-rainbow-glow absolute inset-0 
+              rounded-full blur-sm opacity-75"></div> 
+
+            <div className="relative ring bg-Noir rounded-full p-1 text-sm ">
+              INTRODUCING
+            </div>
+
+          </div>
+
           <span className=""> HI , I'm </span>
+
           <h1
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`w-[430px] h-[100px] text-8xl font-bold transition-all duration-300 cursor-default 
-              ${ isHovered ? "animated-gradient-text" : "text-white" }`}
-          > {user.name}, </h1>
+            className={`w-[430px] h-[100px] text-8xl font-bold transition-all duration-300 
+              ${isHovered 
+                ? "animated-gradient-text" 
+                : "text-white"}`}
+          >
+            {user.name},
+          </h1>
+
           <p className="text-3xl">I'm a "{user.career}".</p>
 
         </div>
       </div>
-    </div>
   );
 }
