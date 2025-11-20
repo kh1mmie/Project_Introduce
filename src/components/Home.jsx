@@ -20,11 +20,6 @@ export default function Home() {
       {/* Container */}
       <div className="relative w-full h-[67%] ">
 
-        {/* Rainbow Border */}
-        {/* <div className="animated-rainbow-border p-[2px] rounded-lg 
-                      absolute inset-0 z-10 pointer-events-none"
-        ></div> */}
-
         {/* Content */}
         <div className="w-full h-full flex flex-col gap-1 justify-center" >
 
