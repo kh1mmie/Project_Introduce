@@ -1,7 +1,7 @@
 import Navbar from "./components/layout/Navbar";
 import Home from "./components/Home";
 import AbstractBackground from "./components/ui/AbstractBackground";
-import About from "./components/About";
+import Work from "./components/Work";
 
 export default function App() {
   return (
@@ -11,7 +11,7 @@ export default function App() {
       <div className="w-3/4 mx-auto">
         <Navbar />
         <Home />
-        <About />
+        <Work />
       </div>
     </div>
   );
