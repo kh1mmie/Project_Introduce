@@ -43,37 +43,22 @@ export default function Navbar() {
 
         {/* Main Menu */}
         <ul className="hidden md:flex gap-8">
-          {/* 1-Home */}
+          {/* 1-About */}
           <li>
             <a
               href="#"
-              onClick={() => handleMenuClick("home")}
+              onClick={() => handleMenuClick("about")}
               className={`nav-link ${
-                selectedMenu === "home"
+                selectedMenu === "about"
                   ? "nav-active"
                   : "hover:text-white hover:scale-110 inline-block transition-transform duration-200"
               }`}
             >
-              Home
+              About Me
             </a>
           </li>
 
-          {/* 2-About */}
-          <li>
-            <a
-              href="#"
-              onClick={() => handleMenuClick("What I do")}
-              className={`nav-link ${
-                selectedMenu === "What I do"
-                  ? "nav-active "
-                  : "hover:text-white hover:scale-110 inline-block transition-transform duration-200"
-              }`}
-            >
-              What I do
-            </a>
-          </li>
-
-          {/* 3-Work */}
+          {/* 2-Work */}
           <li>
             <a
               href="#"
@@ -84,7 +69,22 @@ export default function Navbar() {
                   : "hover:text-white hover:scale-110 inline-block transition-transform duration-200"
               }`}
             >
-              Work
+              Portfolio
+            </a>
+          </li>
+
+          {/* 3-What I Do */}
+          <li>
+            <a
+              href="#"
+              onClick={() => handleMenuClick("What I Do")}
+              className={`nav-link ${
+                selectedMenu === "What I Do"
+                  ? "nav-active "
+                  : "hover:text-white hover:scale-110 inline-block transition-transform duration-200"
+              }`}
+            >
+              What I Do?
             </a>
           </li>
         </ul>
@@ -92,7 +92,7 @@ export default function Navbar() {
 
       {/* 4-BTN-Contact */}
       <button
-        className="bg-white/17 hover:bg-Green4/57  text-white/40 hover:text-white 
+        className="bg-white/17 hover:bg-Green4/57  text-white/40 hover:text-white hover:scale-110
         rounded-full shadow-lg border border-white/20 hover:border-Green4/80
         px-8 py-2.5 flex items-center justify-between transition-all duration-300  
         cursor-pointer "

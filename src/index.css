@@ -17,7 +17,6 @@
 }
 
 @layer utilities {
-  /* ##### Stroke ##### */
   /* stroke width */
   .text-stroke-1 {
     -webkit-text-stroke-width: 1px;
@@ -40,9 +39,44 @@
     -webkit-text-stroke-color: var(--color-Magenta);
     text-stroke-color: var(--color-Magenta);
   }
-  /* ##### Stroke ##### */
+}
 
-  /* ##### Rainbow RGB Run ##### */
+@layer components {
+  .nav-link {
+    @apply relative inline-block transition-transform duration-300;
+  }
+
+  .nav-link::after {
+    content: ""; 
+    @apply absolute left-0 bottom-0 h-[2px] bg-Green4 transition-all duration-300 w-0;
+  }
+
+  /* .nav-link:hover::after {
+    @apply w-full;
+  } */
+
+  .nav-active {
+    @apply text-Green4 scale-110;
+  }
+
+  .nav-active::after {
+    @apply w-full;
+  }
+}
+
+/* KEYFRAMES */
+/* Rainbow RGB Run */
+@keyframes rainbow-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
   /* Rainbow border*/
   .animated-rainbow-border {
     background: linear-gradient(
@@ -76,7 +110,7 @@
       var(--color-Lavender)
     );
     background-size: 200% 100%;
-    animation: rainbow-border 8s linear infinite;
+    animation: rainbow-border 5s linear infinite;
   }
   /* Text Run */
   .animated-gradient-text {
@@ -94,11 +128,11 @@
     -webkit-text-fill-color: transparent;
     animation: rainbow-border 8s linear infinite;
   }
-  /* ##### Rainbow RGB Run ##### */
-}
+/* End*/
 
-@keyframes rainbow-border {
-  0% {
+/* Gradient X Animation */
+@keyframes gradient-x {
+ 0% {
     background-position: 0% 50%;
   }
   50% {
@@ -109,25 +143,33 @@
   }
 }
 
-@layer components {
-  .nav-link {
-    @apply relative inline-block transition-transform duration-300;
-  }
+.text-gradient-animate {
+  background: linear-gradient(
+    to left,
+    var(--color-Green4) 20%, 
+    #ffffff 111%,
+    var(--color-Ivory) 150% 
+  );
 
-  .nav-link::after {
-    content: ""; 
-    @apply absolute left-0 bottom-0 h-[2px] bg-Green4 transition-all duration-300 w-0;
-  }
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-x 5s linear infinite; 
+}
+/* End */
 
-  /* .nav-link:hover::after {
-    @apply w-full;
-  } */
+/* --- [ADD] เคอร์เซอร์กระพริบ (Blinking Cursor) --- */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
-  .nav-active {
-    @apply text-Green4 scale-110;
-  }
-
-  .nav-active::after {
-    @apply w-full;
-  }
+.cursor-blink {
+  display: inline-block;
+  width: 2px; 
+  background-color: #ffffff; 
+  animation: blink 1s step-end infinite;
+  margin-left: 4px;
 }

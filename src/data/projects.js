@@ -1,4 +1,3 @@
-// src/data/projects.js
 
 export const projects = [
   {
@@ -6,7 +5,7 @@ export const projects = [
     title: "Portfolio Website",
     description: "เว็บพอร์ตโฟลิโอส่วนตัว สร้างด้วย React, Tailwind CSS และเทคนิค Glassmorphism สุดล้ำ",
     tech: ["React", "Tailwind v4", "Vite"],
-    image: "https://placehold.co/600x400/1e0939/a3fe01?text=Portfolio", // รูปตัวอย่าง (เปลี่ยนทีหลังได้)
+    image: "https://placehold.co/600x400/1e0939/a3fe01?text=Portfolio",
     link: "#",
     github: "#"
   },
