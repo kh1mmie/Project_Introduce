@@ -3,6 +3,7 @@ import Navbar from "./components/layout/Navbar";
 import AbstractBackground from "./components/ui/AbstractBackground";
 import Home from "./components/Home";
 import Work from "./components/Work";
+import WhatIDo from "./components/WhatIDo";
 
 export default function App() {
   const [homeFinished, setHomeFinished] = useState(false);
@@ -15,6 +16,7 @@ export default function App() {
       <div className="w-3/4 mx-auto ">
         <Navbar />
         <Home onFinish={() => setHomeFinished(true)} />
+        <WhatIDo />
         <Work startAnimation={homeFinished} />
         {/* <div className="snap-normal snap-center "> */}
         {/* </div> */}

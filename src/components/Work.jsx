@@ -31,15 +31,15 @@ export default function Work({ startAnimation }) {
   return (
     <section
       id="work"
-      className="py-20 px-4 relative z-10 h-screen flex items-center "
+      className="py-20 px-4 relative z-10 flex items-center h-screen "
     >
-      <div className="max-w-6xl mx-auto">
+      
+      <div className="max-w-6xl mx-auto h-full ">
         {/* Header */}
         <div className="mb-16 cursor-default ">
           <div className="w-12 h-1 bg-Green4 mb-6 rounded-full"></div>
 
           <h1 className="text-4xl font-semibold text-Green4">PROJECTS</h1>
-
           <h2
             ref={titleRef} 
             className="text-6xl font-bold mb-6 text-white h-[1.2em]">
@@ -48,7 +48,6 @@ export default function Work({ startAnimation }) {
               text="Selected Works"
               speed={150}
               start={startAnimation && isVisible}
-              delay={1000}
               // onComplete={() => setIsFirstDone(true)}
             />
           </h2>
@@ -62,12 +61,13 @@ export default function Work({ startAnimation }) {
         </div>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-nowrap gap-8">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
+
     </section>
   );
 }

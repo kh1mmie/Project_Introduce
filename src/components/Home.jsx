@@ -47,13 +47,15 @@ export default function Home({ onFinish }) {
         <div className="relative w-[150px] mb-7 text-center">
           <div
             className="animated-rainbow-glow absolute inset-0 
-              rounded-full blur-sm opacity-75"
+              rounded-full blur-sm "
           ></div>
 
           <div className="relative ring bg-Noir rounded-full p-1 text-sm ">
             INTRODUCING
           </div>
         </div>
+
+        <div className="w-12 h-1 animated-rainbow-glow mb-6 rounded-full"></div>
 
         <span className=""> HI , I'm </span>
 
@@ -68,7 +70,7 @@ export default function Home({ onFinish }) {
             text={`${user.name},`}
             speed={200}
             onComplete={onFinish}
-            delay={1000}
+            delay={899}
           />
         </h1>
 
