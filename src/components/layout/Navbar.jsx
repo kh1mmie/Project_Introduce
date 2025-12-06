@@ -39,7 +39,13 @@ export default function Navbar() {
       px-10 py-3 flex md:flex-row gap-8 items-center justify-between transition-all duration-300 w-full h-[50px]"
       >
         {/* Logo Web */}
-        <img className="w-[50px] h-[50px]" src="/public/img/chihuahua.png" alt=" " />
+        <a href="#home">
+          <img 
+            className="w-[50px] h-[50px] hover:scale-120 transition-transform duration-200" 
+            src="/public/img/chihuahua.png" 
+            alt=" " 
+          />
+        </a>
 
         {/* Main Menu */}
         <ul className="hidden md:flex gap-8">
@@ -61,7 +67,7 @@ export default function Navbar() {
           {/* 2-Work */}
           <li>
             <a
-              href="#"
+              href="#work"
               onClick={() => handleMenuClick("work")}
               className={`nav-link ${
                 selectedMenu === "work"
@@ -76,7 +82,7 @@ export default function Navbar() {
           {/* 3-What I Do */}
           <li>
             <a
-              href="#"
+              href="#whatido"
               onClick={() => handleMenuClick("What I Do")}
               className={`nav-link ${
                 selectedMenu === "What I Do"

@@ -23,7 +23,6 @@ export default function Home({ onFinish }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // [Logic] ถ้าโผล่เข้ามาในจอ (isIntersecting)
         if (entry.isIntersecting) {
           setReplayKey((prevKey) => prevKey + 1);
         }
@@ -39,11 +38,13 @@ export default function Home({ onFinish }) {
   }, []);
 
   return (
-    <div
+    <section
+      id="home"
       ref={containerRef} 
       className="mx-20 h-screen text-white cursor-default ">
-      {/* Content */}
+
       <div className="w-full h-full flex flex-col gap-1 justify-center">
+        {/* Header */}
         <div className="relative w-[150px] mb-7 text-center">
           <div
             className="animated-rainbow-glow absolute inset-0 
@@ -55,10 +56,11 @@ export default function Home({ onFinish }) {
           </div>
         </div>
 
+        {/* Green Line */}
         <div className="w-12 h-1 animated-rainbow-glow mb-6 rounded-full"></div>
 
+        {/* Content */}
         <span className=""> HI , I'm </span>
-
         <h1
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -68,14 +70,14 @@ export default function Home({ onFinish }) {
           <Typewriter
             key={replayKey}
             text={`${user.name},`}
-            speed={200}
+            speed={150}
             onComplete={onFinish}
             delay={899}
           />
         </h1>
-
         <p className="text-3xl">I'm a "{user.career}".</p>
       </div>
-    </div>
+
+    </section>
   );
 }

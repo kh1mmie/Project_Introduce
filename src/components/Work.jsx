@@ -33,13 +33,15 @@ export default function Work({ startAnimation }) {
       id="work"
       className="py-20 px-4 relative z-10 flex items-center h-screen "
     >
-      
+
       <div className="max-w-6xl mx-auto h-full ">
         {/* Header */}
         <div className="mb-16 cursor-default ">
+
+          {/* Green Line */}
           <div className="w-12 h-1 bg-Green4 mb-6 rounded-full"></div>
 
-          <h1 className="text-4xl font-semibold text-Green4">PROJECTS</h1>
+          <h1 className="text-4xl font-semibold text-Green4 uppercase">Projects</h1>
           <h2
             ref={titleRef} 
             className="text-6xl font-bold mb-6 text-white h-[1.2em]">
@@ -52,11 +54,9 @@ export default function Work({ startAnimation }) {
             />
           </h2>
 
+          {/* Content */}
           <p className="text-gray-400 text-lg max-w-2xl ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            natus corrupti officia commodi minus modi inventore quisquam
-            explicabo neque eius placeat perferendis voluptas consequatur, nobis
-            quis doloribus. Odio, velit dolorum!
+            A collection of projects that challenge me to grow. Each piece represents a unique problem solved through clean code and thoughtful design.
           </p>
         </div>
 
